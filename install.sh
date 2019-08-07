@@ -1,5 +1,5 @@
 #!/bin/bash
-# Installs IntelliJ configs into your user configs.
+# Installs Square's IntelliJ configs into your user configs.
 
 echo "Installing Square IntelliJ configs..."
 
@@ -21,9 +21,13 @@ do
     # Install inspections
     mkdir -p $i/inspection
     cp -frv "$CONFIGS/inspection"/* $i/inspection
+
+    # Install options ("Exclude from Import and Completion")
+    mkdir -p $i/options
+    cp -frv "$CONFIGS/options"/* $i/options
   fi
 done
 
 echo "Done."
 echo ""
-echo "Restart IntelliJ and/or AndroidStudio, go to preferences, and apply 'ShixinyunAndroid'."
+echo "Restart IntelliJ and/or AndroidStudio, go to preferences, and apply 'Square' or 'SquareAndroid'."
